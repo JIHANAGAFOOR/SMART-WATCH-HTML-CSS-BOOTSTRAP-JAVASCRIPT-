@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Watch</title>
+  <script
+  src="https://code.jquery.com/jquery-3.6.0.js"integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="watch.css">
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+   <div id="container-fluid">
+     
+     <div class="row">
+       <div class="col-sm-4"></div>
+       <div class="col-sm-4"><div id="watch1"> <br><br><br><br><br>
+        <br><br><br>
+        <center> <h2>Messages</h2></center>
+       <br><div id="blank1">
+       <ul>
+        <li id="html">HTML</li>  <br>
+<div id="htmltext">Hello javatpoint.com!   
+It is the best tutorial website.</div> 
+<li id="css">CSS</li>  <br>
+<div id="csstext">Hello javatpoint.com!   
+It is the best tutorial website.</div>
+<li id="jquery">JQUERY</li>  <br>
+<div id="jquerytext">Hello javatpoint.com!   
+It is the best tutorial website </div> </ul></div>
+      <center>  <a href="watch.html"><i class="fa fa-home" aria-hidden="true"></i></a><a href="message.html"><i class="fa fa-envelope-o" aria-hidden="true" onclick="message()"></i></a>
+    <a href="music.html"><i class="fa fa-music" aria-hidden="true"></i></a>
+    <a href="timer.html"><i class="fa fa-clock-o" aria-hidden="true"></i></a><center></div></div>
+       <div class="col-sm-2"></div>
+     </div>
+   </div>
+   <style>
+      #blank1{
+        height: 140px;
+        width: 260px;
+      
+       overflow-y: scroll;
+     } 
+     #blank1::-webkit-scrollbar {
+    display: none;
+}
+
+
+#blank1 {
+  -ms-overflow-style: none;  
+  scrollbar-width: none;  
+}
+     li{
+       list-style-type: none;
+       cursor: pointer;
+     }
+    #htmltext,#csstext,#jquerytext{
+       display: none;
+       padding: 20px;
+     }
+   </style>
+  <script >
+  $(document).ready(function(){  
+    $("#html").click(function(){  
+        $("#htmltext").slideToggle("slow");  
+    }); 
+    $("#css").click(function(){  
+        $("#csstext").slideToggle("slow");  
+    }); 
+    $("#jquery").click(function(){  
+        $("#jquerytext").slideToggle("slow");  
+    });  
+});  
+  </script>
+</body>
+</html>

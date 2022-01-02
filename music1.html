@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Watch</title>
+  <script
+  src="https://code.jquery.com/jquery-3.6.0.js"integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="watch.css">
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+   <div id="container-fluid">
+     <div class="row">
+       <div class="col-sm-4"></div>
+       <div class="col-sm-5"><div id="watch1"> <br><br><br><br><br><br>
+        <br><br><br>
+
+        <center>
+          <aside id="musicbg">
+            <div id="blank2"><img src="1.jpg" id="img1"></div>
+            <span id="previous" ><i class="fa fa-backward" id="ico"aria-hidden="true" onclick="previous()"></i>
+              </span><span id="play"onclick="playpauseTrack()" >
+                          <i class="fa fa-play" id="ico"aria-hidden="true"  > </i></span>
+
+
+            <span id="next" ><i class="fa fa-forward" id="ico"aria-hidden="true"onclick="next()" ></i></span>
+            <audio id="audio1" controls>
+
+            </audio>
+          </aside>
+        </center><center>  <a href="watch.html"><i class="fa fa-home"id="icon1" aria-hidden="true"></i></a><a href="message.html"><i class="fa fa-envelope-o" aria-hidden="true" id="icon1"onclick="message()"></i></a>
+    <a href="music.html"><i class="fa fa-music" id="icon1"aria-hidden="true"></i></a>
+    <a href="timer.html"><i class="fa fa-clock-o"id="icon1" aria-hidden="true"></i></a><center>
+       </div></div>
+       <div class="col-sm-3"></div>
+     </div>
+   </div>
+   <script>
+ var i=0;
+         var m="";
+         var p="";
+         var isPlaying = false;
+         var a=document.getElementById("audio1");
+         var b=document.getElementById("play");
+         var ic=document.getElementsByTagName("i")[1];
+         var img=document.getElementById("img1")
+        //  console.log(ic)
+    function playpause1(){
+         var xhttp=new XMLHttpRequest();
+         xhttp.onreadystatechange=function(){
+         if(this.readyState==4 && this.status==200)
+        {
+          var songsTrack=JSON.parse(this.responseText);
+    //  console.log(songsTrack)
+          var sf=songsTrack.songs;
+      // console.log(sf);
+      // m=sf[i].song;
+      p=sf[i].image;
+      // console.log(m);
+      // a.src=m;
+      img.src=p;
+  // Play the loaded track
+  m = sf[i].song;
+  a.src=m
+  a.load();
+  // a.src=m;
+  // a.load();
+  // console.log(m);
+ 
+    // if(ic.className == "fa fa-play")
+    // {
+    //   ic.className="fa fa-pause";
+    //   a.play();
+    // }
+    // else{
+    //   ic.className="fa fa-play"
+    //   a.pause();
+      
+    // }
+
+  }
+}
+   xhttp.open("GET","songs.json",true)
+  xhttp.send();
+}
+function playpauseTrack() {
+  console.log(m)
+  
+ 
+  // playpause1()
+  // Switch between playing and pausing
+  // depending on the current state
+  if (!isPlaying) playTrack();
+  else pauseTrack();
+}
+function playTrack() {
+  // playpause1()
+  // console.log(m)
+  // a.src=m;
+  a.play();
+  isPlaying = true;
+  
+  // Replace icon with the pause icon
+ b.innerHTML = '<i class="fa fa-pause"></i>';
+}
+  
+function pauseTrack() {
+  playpause1()
+  // Pause the loaded track
+  
+  // console.log(m);
+  a.pause();
+  isPlaying = false;
+  
+  // Replace icon with the play icon
+ b.innerHTML = '<i class="fa fa-play"></i>';
+}
+function next(){
+  ic.className="fa fa-play"
+  playpause1();
+  i++;
+}
+function previous(){
+  ic.className="fa fa-play"
+  i--;
+  playpause1();
+}
+</script>
+   <style>
+     #musicbg{
+       background-color: aquamarine;
+       width:200px;
+       height:200px;
+       border-radius: 20px;
+       padding: 20px;
+     }
+     #blank2{
+       height: 100px;
+      }
+      #icon1{
+        padding: 10px;
+      }
+      img{
+        width:140px;
+        height: 100px;
+        border-radius: 10px;
+      }
+      #audio1{
+        height:14px;
+        width:170px;
+        background-color: aquamarine;
+      }
+      #ico{
+        padding: 10px;
+      }
+      audio::-webkit-media-controls-play-button,
+     audio::-webkit-media-controls-panel {
+     background-color:darkcyan;
+     }
+   </style>
+  <!-- <script src="watch.js"></script> -->
+</body>
+</html>

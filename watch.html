@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Watch</title>
+  <script
+  src="https://code.jquery.com/jquery-3.6.0.js"integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="watch.css">
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+   <div id="container-fluid">
+     
+     <div class="row">
+       <div class="col-sm-4"></div>
+       <div class="col-sm-5"><div id="watch"> <br><br><br><br><br><br>
+        <br><br><br>
+        <center> <div id="change"><p id="date" onload=showDate()></p>
+    <p id="time" onload=showtime()></p> 
+    <br><br><br>
+    <a href="message.html"><i class="fa fa-envelope-o" aria-hidden="true" onclick="message()"></i></a>
+    <a href="music.html"><i class="fa fa-music" aria-hidden="true"></i></a>
+    <a href="timer.html"><i class="fa fa-clock-o" aria-hidden="true"></i></a></div></center>
+       </div></div>
+       <div class="col-sm-2"></div>
+     </div>
+   </div>
+  <script src="watch.js"></script>
+</body>
+</html>

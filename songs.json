@@ -1,0 +1,30 @@
+ {
+  "songs":[
+    {
+      "name":"jihana",
+      "image":"1.jpg",
+      "song":"1.mp3"
+    },
+    {
+      "name":"anu",
+      "image":"2.jpg",
+      "song":"2.mp3"
+    },
+    {
+      "name":"jihana",
+      "image":"3.jpg",
+      "song":"3.mp3"
+    },
+    {
+      "name":"anu",
+      "image":"5.jpg",
+      "song":"5.mp3"
+    },
+    
+    {
+      "name":"anu",
+      "image":"4.jpg",
+      "song":"4.mp3"
+    }
+  ]
+}
